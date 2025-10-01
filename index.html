@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mishra Tennis Telegram</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* General Body Styling */
+        body {
+            background-image: url('img1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        /* Glassmorphism Container */
+        .container {
+            z-index: 2;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            width: 95%;
+            max-width: 450px;
+            padding: 30px;
+            animation: fadeIn 1s ease-in-out forwards; /* Added 'forwards' to keep the final state */
+            opacity: 0; /* Starts hidden */
+        }
+        
+        /* Tennis Ball Emoji */
+        .tennis-emoji {
+            font-size: 3rem;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%) rotate(0deg);
+            animation: spin 2s linear infinite;
+        }
+
+        /* Text Styling */
+        .brand-heading {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        .brand-subheading {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #fceb0a;
+            font-style: italic;
+            margin-top: -10px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e3f2fd;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            margin-top: 20px;
+        }
+
+        /* Button Styles */
+        .pass-button {
+            border-radius: 50px;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: 700;
+            display: inline-block;
+            margin: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            animation: passZoom 0.6s infinite alternate;
+        }
+        
+        .pass-button.red-btn {
+            background: linear-gradient(90deg, #ff4949, #b90e0e);
+            color: #ffffff;
+        }
+        
+        .pass-button.yellow-btn {
+            background:linear-gradient(90deg, #fdf25a, #ffee00); 
+            color: #212529;
+        }
+
+        .pass-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            border-radius: 50px;
+            background: linear-gradient(90deg, #5cdadd, #4c9ce6);
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            animation: ctaZoom 0.4s infinite alternate;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(92, 218, 221, 0.7);
+        }
+        
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes passZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        @keyframes ctaZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        @keyframes spin {
+            from { transform: translateX(-50%) rotate(0deg); }
+            to { transform: translateX(-50%) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center text-white">
+        <span class="tennis-emoji">🎾</span>
+        
+        <h1 class="brand-heading mb-0">MISHRA <span class="text-primary">TENNIS</span></h1>
+        <p class="brand-subheading mb-4">Since 2010</p>
+        
+        <p class="section-title mb-2">ALL MATCH PASS</p>
+        
+        <div class="d-flex justify-content-center mb-5">
+            <button class="pass-button red-btn">Session Pass</button>
+            <button class="pass-button yellow-btn">Toss Pass</button>
+        </div>
+
+        <h2 class="section-title mb-2">JOIN MISHRA JI</h2>
+        <p class="fs-5 fw-bold mb-4" style="color: #fceb0a;">TELEGRAM CHANNEL</p>
+        
+        <a href="https://t.me/+qf23_6TE7w44MTRl" class="btn cta-button text-white p-3 px-5 d-block mx-auto fw-bold mb-3" style="max-width: 350px;">
+            <i class="fab fa-telegram-plane me-2"></i> CLICK HERE TO JOIN
+        </a>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+</body>
+</html>
